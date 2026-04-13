@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Vital Red Sênior 3 em 1 | Mais Saúde e Qualidade de Vida</title>
+    
+    <!-- Fonte Otimizada para Leitura (Inter & Outfit para Títulos) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS Tailwind via CDN (Apenas para este arquivo único) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            main: '#C40000',
+                            sec: '#E10600',
+                            dark: '#900000',
+                            light: '#FFF5F5'
+                        },
+                        base: {
+                            light: '#F5F5F5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F5F5F5; }
+        
+        /* Textos maiores para idosos */
+        .text-reading { font-size: 1.25rem; line-height: 1.7; }
+        .title-reading { font-size: 2.5rem; line-height: 1.2; }
+        @media (min-width: 768px) {
+            .text-reading { font-size: 1.35rem; }
+            .title-reading { font-size: 3.5rem; }
+        }
+
+        /* Animações e Botões Vendedores */
+        .btn-pulse {
+            animation: pulse-shadow 2.5s infinite;
+        }
+        @keyframes pulse-shadow {
+            0% { box-shadow: 0 0 0 0 rgba(225, 6, 0, 0.5); }
+            70% { box-shadow: 0 0 0 25px rgba(225, 6, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(225, 6, 0, 0); }
+        }
+
+        .cta-button {
+            background-color: #E10600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .cta-button:hover {
+            background-color: #C40000;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(196, 0, 0, 0.5);
+        }
+
+        /* FAQ Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        }
+        .faq-item.active .faq-content {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Hero Image Float */
+        .float-anim {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Lock Screen Script Info */
+        .lock-notice { display: none; }
+    </style>
+</head>
+<body class="text-gray-900 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- AVISO DE TRAVA CONFORME REGRA DO SISTEMA -->
+    <div id="system-lock" class="fixed inset-0 bg-black/90 z-[9999] hidden flex-col items-center justify-center p-6 text-center text-white">
+        <i data-lucide="alert-triangle" class="w-24 h-24 text-red-500 mb-6"></i>
+        <h2 class="text-3xl font-heading font-bold mb-4">Ação Bloqueada</h2>
+        <p class="text-2xl max-w-2xl">Erro: Este site foi otimizado para máxima conversão. Apenas alterações dentro da Landing Page são permitidas.</p>
+        <button onclick="document.getElementById('system-lock').classList.add('hidden')" class="mt-8 bg-gray-800 text-white px-8 py-4 rounded-xl text-xl font-bold border border-gray-700 hover:bg-gray-700">Entendi</button>
+    </div>
+
+    <!-- 1. Cabeçalho -->
+    <header class="bg-white shadow-md sticky top-0 w-full z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 md:py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-main p-2 md:p-3 rounded-lg text-white">
+                    <i data-lucide="heart-pulse" class="w-8 h-8 md:w-10 md:h-10"></i>
+                </div>
+                <!-- Nome do Produto Grande e Claro -->
+                <div class="flex flex-col">
+                    <span class="font-heading font-extrabold text-2xl md:text-3xl text-brand-main leading-none">Vital Red</span>
+                    <span class="font-heading font-bold text-gray-600 text-sm md:text-lg tracking-widest uppercase">Sênior 3 em 1</span>
+                </div>
+            </div>
+            
+            <a href="#oferta" class="cta-button btn-pulse hidden md:inline-flex items-center gap-3 text-white font-bold text-xl px-10 py-4 rounded-full shadow-lg">
+                <i data-lucide="shopping-cart"></i>
+                Comprar Agora
+            </a>
+            
+            <a href="#oferta" class="cta-button btn-pulse inline-flex md:hidden items-center text-white font-bold text-lg px-6 py-3 rounded-full shadow-lg">
+                Comprar
+            </a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Principal -->
+    <section class="bg-white border-b-8 border-brand-main overflow-hidden relative">
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-brand-light transform -skew-x-12 hidden lg:block -z-0"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 pt-12 pb-20 md:pt-24 md:pb-28 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+            
+            <div class="text-center lg:text-left space-y-8">
+                <div class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-5 py-2 rounded-full font-bold text-lg mb-2 mx-auto lg:mx-0 border border-yellow-300">
+                    <i data-lucide="star" class="fill-current w-5 h-5"></i>
+                    Aprovado por especialistas
+                </div>
+                
+                <h1 class="font-heading font-bold title-reading text-gray-900">
+                    O Cuidado Completo que a <span class="text-brand-main underline decoration-brand-sec/30 decoration-8 underline-offset-4">Sua Saúde</span> Precisa.
+                </h1>
+                
+                <h2 class="text-reading text-gray-600 font-medium">
+                    A suplementação exata para quem deseja <strong class="text-brand-main">mais saúde, força e qualidade de vida na melhor idade</strong>, em apenas 3 frascos.
+                </h2>
+                
+                <div class="pt-6 flex flex-col items-center lg:items-start gap-4">
+                    <a href="#oferta" class="cta-button btn-pulse w-full max-w-md flex items-center justify-center gap-3 text-white font-black text-2xl lg:text-3xl px-8 py-6 rounded-full shadow-[0_10px_20px_rgba(225,6,0,0.3)]">
+                        <i data-lucide="check-circle" class="w-8 h-8"></i>
+                        COMPRAR AGORA
+                    </a>
+                    <div class="flex items-center gap-2 text-gray-500 font-bold text-lg bg-green-50 px-6 py-2 rounded-full border border-green-200">
+                        <i data-lucide="shield-check" class="text-green-600 w-6 h-6"></i> Compra 100% Segura e Garantida
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Imagem Mockup Visual Forte -->
+            <div class="relative mx-auto w-full max-w-lg lg:max-w-xl float-anim">
+                <div class="aspect-square bg-gray-50 rounded-full border-[12px] border-white shadow-2xl relative flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 bg-brand-main/5 pointer-events-none"></div>
+                    
+                    <div class="text-center relative z-10 p-10">
+                        <div class="flex justify-center -space-x-8 mb-4">
+                            <!-- Frasco 1 -->
+                            <div class="w-24 h-40 md:w-32 md:h-48 bg-white border border-gray-200 shadow-lg rounded-[20%] flex flex-col items-center justify-center relative z-10 transform -rotate-12 translate-y-4">
+                                <div class="w-full h-8 bg-blue-600 rounded-t-[20%] absolute top-0"></div>
+                                <i data-lucide="bone" class="w-10 h-10 text-blue-600 mt-6"></i>
+                                <span class="text-[10px] md:text-sm font-bold mt-2 text-center leading-tight">Ossos<br>Fortes</span>
+                            </div>
+                            <!-- Frasco 2 -->
+                            <div class="w-28 h-48 md:w-36 md:h-56 bg-white border border-gray-200 shadow-2xl rounded-[20%] flex flex-col items-center justify-center relative z-30 transform -translate-y-2">
+                                <div class="w-full h-10 bg-brand-main rounded-t-[20%] absolute top-0"></div>
+                                <i data-lucide="heart" class="w-12 h-12 text-brand-main mt-8 fill-current"></i>
+                                <span class="text-xs md:text-sm font-black mt-2 text-center leading-tight text-brand-main">Coração &<br>Memória</span>
+                            </div>
+                            <!-- Frasco 3 -->
+                            <div class="w-24 h-40 md:w-32 md:h-48 bg-white border border-gray-200 shadow-lg rounded-[20%] flex flex-col items-center justify-center relative z-20 transform rotate-12 translate-y-4">
+                                <div class="w-full h-8 bg-purple-600 rounded-t-[20%] absolute top-0"></div>
+                                <i data-lucide="sparkles" class="w-10 h-10 text-purple-600 mt-6"></i>
+                                <span class="text-[10px] md:text-sm font-bold mt-2 text-center leading-tight">Articulações<br>& Pele</span>
+                            </div>
+                        </div>
+                        <h3 class="font-heading font-black text-3xl md:text-4xl text-gray-900 drop-shadow-sm mt-6">Kit 3 em 1</h3>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 3. Benefícios Principais -->
+    <section class="py-20 md:py-24 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <h2 class="font-heading font-bold text-4xl md:text-5xl text-gray-900 mb-6">
+                    Aproveite a vida com muito <span class="text-brand-main text-opacity-100">mais vigor!</span>
+                </h2>
+                <p class="text-reading text-gray-600">Com apenas 1 kit completo, você resolve as principais necessidades nutricionais e garante independência no dia a dia.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefício 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow text-center">
+                    <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="zap" class="w-10 h-10 text-yellow-600"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-2xl text-gray-900 mb-4">Mais Energia</h3>
+                    <p class="text-lg text-gray-600">Vitalidade para brincar com os netos, passear e fazer suas tarefas sem cansaço extremo.</p>
+                </div>
+                
+                <!-- Benefício 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow text-center relative transform lg:-translate-y-4">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="activity" class="w-10 h-10 text-blue-600"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-2xl text-gray-900 mb-4">Mais Mobilidade</h3>
+                    <p class="text-lg text-gray-600">Volte a caminhar e se mover com facilidade. Juntas lubrificadas e ossos reforçados.</p>
+                </div>
+
+                <!-- Benefício 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="shield-plus" class="w-10 h-10 text-green-600"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-2xl text-gray-900 mb-4">Mais Saúde</h3>
+                    <p class="text-lg text-gray-600">Proteção reforçada para o coração e cérebro blindado para uma memória sempre afiada.</p>
+                </div>
+
+                <!-- Benefício 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow text-center relative transform lg:-translate-y-4">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="smile" class="w-10 h-10 text-purple-600"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-2xl text-gray-900 mb-4">Mais Qualidade</h3>
+                    <p class="text-lg text-gray-600">Acordar se sentindo bem. Dormir com tranquilidade e viver a vida em seu potencial máximo.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="#oferta" class="cta-button inline-flex items-center justify-center gap-3 text-white font-bold text-2xl px-12 py-5 rounded-full shadow-lg">
+                    QUERO MAIS ENERGIA <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. O Que Vem no Kit -->
+    <section class="py-20 md:py-24 bg-brand-main text-white relative">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            
+            <h2 class="font-heading font-bold text-4xl md:text-5xl text-center mb-16">
+                Veja o que compõe o <span class="text-yellow-400">Kit Completo:</span>
+            </h2>
+
+            <div class="grid lg:grid-cols-3 gap-10">
+                <!-- Frasco 1 Detalhe -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 text-center hover:bg-white/20 transition-colors">
+                    <div class="w-24 h-24 bg-blue-500 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg transform -rotate-6">
+                        <i data-lucide="bone" class="w-12 h-12 text-white"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-3xl mb-4 text-white">Ossos Fortes</h3>
+                    <div class="bg-brand-dark/50 py-2 rounded-xl mb-6 font-bold text-xl text-yellow-300">Cálcio + Vit. D + Magnésio</div>
+                    <p class="text-reading text-gray-200">Aumenta a densidade óssea, evita quedas e fraturas, e melhora a absorção do cálcio diretamento nos ossos.</p>
+                </div>
+
+                <!-- Frasco 2 Detalhe -->
+                <div class="bg-white border-4 border-yellow-400 p-8 rounded-3xl text-center transform scale-105 shadow-2xl relative">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 font-bold px-4 py-1 rounded-full uppercase tracking-wider text-sm">O Mais Poderoso</div>
+                    <div class="w-24 h-24 bg-brand-main rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                        <i data-lucide="heart" class="w-12 h-12 text-white fill-current"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-3xl mb-4 text-brand-main">Coração & Memória</h3>
+                    <div class="bg-brand-light py-2 rounded-xl mb-6 font-bold text-xl text-brand-sec">Ômega 3 + Multivitamínico</div>
+                    <p class="text-reading text-gray-700">Blinda o coração contra problemas cardiovasculares e ativa a mente para um foco e memória cristalinos.</p>
+                </div>
+
+                <!-- Frasco 3 Detalhe -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 text-center hover:bg-white/20 transition-colors">
+                    <div class="w-24 h-24 bg-purple-500 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg transform rotate-6">
+                        <i data-lucide="sparkles" class="w-12 h-12 text-white"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-3xl mb-4 text-white">Articulações & Pele</h3>
+                    <div class="bg-brand-dark/50 py-2 rounded-xl mb-6 font-bold text-xl text-yellow-300">Colágeno + Vitaminas</div>
+                    <p class="text-reading text-gray-200">Reconstrói a cartilagem entre os ossos tirando dores nos joelhos, ombros e costas. Rejuvenesce a pele.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. Para Quem é -->
+    <section class="py-20 md:py-24 bg-white block">
+        <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div>
+                <h2 class="font-heading font-bold text-4xl md:text-5xl text-gray-900 mb-8 leading-tight">
+                    Para quem é <span class="text-brand-main">recomendado</span> o uso diário?
+                </h2>
+                
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="bg-green-100 p-2 rounded-full mt-1 shrink-0">
+                            <i data-lucide="check" class="w-8 h-8 text-green-600 font-bold"></i>
+                        </div>
+                        <div>
+                            <strong class="text-2xl text-gray-800 blo">Todos os Idosos</strong>
+                            <p class="text-xl text-gray-600 mt-1">É a prevenção e o tratamento definitivo para a terceira idade.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-green-100 p-2 rounded-full mt-1 shrink-0">
+                            <i data-lucide="check" class="w-8 h-8 text-green-600 font-bold"></i>
+                        </div>
+                        <div>
+                            <strong class="text-2xl text-gray-800 blo">Pessoas com dores</strong>
+                            <p class="text-xl text-gray-600 mt-1">Sofre com artrose, artrite ou dores nas juntas? O alívio será gigante.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-green-100 p-2 rounded-full mt-1 shrink-0">
+                            <i data-lucide="check" class="w-8 h-8 text-green-600 font-bold"></i>
+                        </div>
+                        <div>
+                            <strong class="text-2xl text-gray-800 blo">Pessoas com pouca energia</strong>
+                            <p class="text-xl text-gray-600 mt-1">Devolve a vitalidade, tira aquela sensação constante de corpo pesado.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-green-100 p-2 rounded-full mt-1 shrink-0">
+                            <i data-lucide="check" class="w-8 h-8 text-green-600 font-bold"></i>
+                        </div>
+                        <div>
+                            <strong class="text-2xl text-gray-800 blo">Pessoas acima de 50 anos</strong>
+                            <p class="text-xl text-gray-600 mt-1">O momento perfeito para começar a blindar a saúde do corpo.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Imagem Cativante Idosos Felizes (Placeholder) -->
+            <div class="relative">
+                <!-- Usaremos uma imagem placeholder realista por código CSS/HTML -->
+                <div class="w-full aspect-[4/3] bg-brand-light rounded-[3rem] p-4 shadow-xl border-4 border-brand-main/20 relative flex items-center justify-center overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1579730559107-7ea44f59cbca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Casal de idosos felizes caminhando e sorrindo" class="absolute inset-0 w-full h-full object-cover">
+                    <!-- overlay pra escurecer um pouco se precisar, não precisa aqui -->
+                </div>
+                
+                <!-- Card TrustFlotante -->
+                <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 max-w-[280px]">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="flex text-yellow-400">
+                            <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                            <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                            <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                            <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                            <i data-lucide="star" class="fill-current w-6 h-6"></i>
+                        </div>
+                        <span class="font-bold text-gray-800 text-lg">5.0</span>
+                    </div>
+                    <p class="text-gray-700 font-medium text-lg">Recomendado por Médicos e Especialistas em Geriatria.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. Depoimentos -->
+    <section class="py-20 md:py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-bold text-4xl md:text-5xl text-gray-900 mb-4">
+                    O que dizem as <span class="text-brand-main">nossas famílias?</span>
+                </h2>
+                <p class="text-reading text-gray-600 max-w-2xl mx-auto">Histórias reais de quem já transformou a sua qualidade de vida.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-md border border-gray-100 flex flex-col h-full hover:shadow-xl transition-shadow">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i>
+                    </div>
+                    <p class="text-reading text-gray-700 italic flex-grow mb-8">
+                        "Melhorou muito a minha disposição. Antes eu acordava já cansada. Tomando o Kit Vital Red sinto que voltei a ter 50 anos de idade!"
+                    </p>
+                    <div class="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
+                        <div class="w-14 h-14 bg-brand-light rounded-full flex items-center justify-center text-brand-main font-bold text-xl">M</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900">Maria da Silva</h4>
+                            <span class="text-gray-500 text-lg">67 anos, São Paulo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-md border border-gray-100 flex flex-col h-full hover:shadow-xl transition-shadow">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i>
+                    </div>
+                    <p class="text-reading text-gray-700 italic flex-grow mb-8">
+                        "Menos dores no dia a dia. Uma benção! Meu joelho não estrala mais para subir as escadas daqui de casa. Excelente."
+                    </p>
+                    <div class="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
+                        <div class="w-14 h-14 bg-brand-light rounded-full flex items-center justify-center text-brand-main font-bold text-xl">J</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900">João Carlos</h4>
+                            <span class="text-gray-500 text-lg">71 anos, Minas Gerais</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-md border border-gray-100 flex flex-col h-full hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1">
+                    <div class="flex text-yellow-400 mb-6">
+                        <i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i><i data-lucide="star" class="fill-current w-6 h-6"></i>
+                    </div>
+                    <p class="text-reading text-gray-700 italic flex-grow mb-8">
+                        "Comprei para a minha mãe e a memória dela está visivelmente melhor. O Ômega 3 desse kit faz muita diferença, recomendo a todos!"
+                    </p>
+                    <div class="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
+                        <div class="w-14 h-14 bg-brand-light rounded-full flex items-center justify-center text-brand-main font-bold text-xl">A</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-900">Ana Paula</h4>
+                            <span class="text-gray-500 text-lg">Filha da Sra. Lourdes (80)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 7. OFERTA / CHECKOUT -->
+    <section id="oferta" class="py-24 bg-gray-900 text-white relative">
+        <div class="max-w-5xl mx-auto px-4 relative z-10 text-center">
+            
+            <h2 class="font-heading font-black text-4xl md:text-5xl mb-6">
+                <span class="text-brand-main text-white drop-shadow-sm">Kit Vital Red Sênior 3 em 1</span> — <span class="text-yellow-400">Oferta Especial por Tempo Limitado</span>
+            </h2>
+            <p class="text-reading text-gray-300 mb-12 max-w-3xl mx-auto">Você está garantindo o Kit Vital Red Sênior 3 em 1, o suplemento completo para mais saúde, energia e qualidade de vida.</p>
+            
+            <!-- Box Principal Offer -->
+            <div class="bg-white rounded-[2.5rem] p-1 lg:p-3 text-gray-900 max-w-4xl mx-auto shadow-2xl">
+                <div class="border-4 border-brand-main rounded-[2rem] p-8 lg:p-12 relative overflow-hidden">
+                    
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 font-bold px-6 py-2 rounded-bl-3xl shadow-md text-sm md:text-lg">
+                        🚚 ENTREGA INCLUSA
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-12 items-start text-left mt-4 md:mt-8">
+                        
+                        <!-- Coluna 1: O que leva -->
+                        <div>
+                            <h3 class="font-heading font-black text-2xl lg:text-3xl text-gray-900 mb-6 border-b pb-4">O que contém no Kit:</h3>
+                            
+                            <ul class="text-lg lg:text-xl font-medium text-gray-700 space-y-4 mb-8">
+                                <li class="flex items-start gap-4">
+                                    <div class="bg-blue-100 p-2 rounded-xl mt-1 shrink-0"><i data-lucide="bone" class="text-blue-600 w-6 h-6"></i></div>
+                                    <span><strong>Ossos Fortes</strong><br><span class="text-sm text-gray-500">Cálcio + Vitamina D + Magnésio</span></span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="bg-red-100 p-2 rounded-xl mt-1 shrink-0"><i data-lucide="heart" class="text-brand-main w-6 h-6 fill-current"></i></div>
+                                    <span><strong>Coração & Memória</strong><br><span class="text-sm text-gray-500">Ômega 3 + Multivitamínico</span></span>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="bg-purple-100 p-2 rounded-xl mt-1 shrink-0"><i data-lucide="sparkles" class="text-purple-600 w-6 h-6"></i></div>
+                                    <span><strong>Articulações & Pele</strong><br><span class="text-sm text-gray-500">Colágeno + Vitaminas</span></span>
+                                </li>
+                            </ul>
+
+                            <ul class="text-lg font-bold text-gray-800 space-y-3 bg-gray-50 p-5 md:p-6 rounded-2xl border border-gray-200">
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Mais disposição</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Mais mobilidade</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Mais saúde no dia a dia</li>
+                                <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="text-green-500 w-6 h-6"></i> Ideal para 50+</li>
+                            </ul>
+                        </div>
+
+                        <!-- Coluna 2: Preço e Urgência -->
+                        <div class="text-center bg-brand-light p-6 md:p-8 rounded-[2rem] border border-brand-main/20">
+                            
+                            <!-- Oferta Limitada Tag -->
+                            <div class="bg-brand-main text-white font-bold px-4 py-1 rounded-full inline-block text-sm uppercase tracking-widest mb-6 animate-pulse">
+                                Oferta por tempo limitado
+                            </div>
+
+                            <div class="mb-4">
+                                <span class="text-gray-500 text-xl md:text-2xl font-bold line-through">De R$ 300,00</span>
+                            </div>
+
+                            <div class="mb-8 flex flex-col items-center justify-center">
+                                <span class="font-bold text-2xl text-gray-800 mb-1">Por apenas</span>
+                                <span class="font-heading font-black text-6xl lg:text-7xl text-brand-main">R$ 47,90</span>
+                            </div>
+
+                            <!-- Timer -->
+                            <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-4 md:p-5 mb-8 shadow-sm text-center">
+                                <p class="text-red-700 font-bold mb-2 flex flex-wrap items-center justify-center gap-2">
+                                    <i data-lucide="alert-circle" class="w-5 h-5"></i>
+                                    Esta oferta é válida apenas pelos próximos:
+                                </p>
+                                <div class="text-5xl font-black text-brand-main tracking-widest font-heading drop-shadow-sm flex justify-center items-center gap-2 my-3" id="countdown-timer">
+                                    <span id="countdown-minutes">15</span>:<span id="countdown-seconds">00</span>
+                                </div>
+                                <p class="text-sm md:text-base text-red-600 font-medium mt-2 leading-tight">
+                                    Seu desconto será reservado somente durante esse tempo.<br>Após isso, o valor retorna para R$ 300,00.
+                                </p>
+                            </div>
+
+                            <button id="open-shipping-modal" class="cta-button btn-pulse w-full bg-green-600 hover:bg-green-700 text-white font-black text-xl lg:text-2xl py-5 lg:py-6 rounded-full shadow-[0_10px_20px_rgba(22,163,74,0.3)] flex items-center justify-center gap-3">
+                                Garantir Meu Kit Agora
+                            </button>
+                            
+                            <div class="mt-5 flex items-center justify-center gap-2 text-green-700 font-bold text-base bg-green-50 py-2 rounded-full border border-green-200">
+                                <i data-lucide="lock" class="w-5 h-5"></i> Compra 100% Segura
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 8. GARANTIA -->
+    <section class="py-16 md:py-20 bg-brand-light border-y border-brand-main/20">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-brand-main rounded-full mx-auto flex items-center justify-center shadow-xl mb-8 border-4 border-white transform rotate-3">
+                <i data-lucide="shield-check" class="w-16 h-16 md:w-20 md:h-20 text-white"></i>
+            </div>
+            
+            <h2 class="font-heading font-black text-4xl md:text-5xl text-gray-900 mb-6">
+                Risco Zero: <span class="text-brand-main">Garantia Incondicional</span>
+            </h2>
+            
+            <p class="text-reading text-gray-700 max-w-3xl mx-auto font-medium">
+                Confiamos tanto na qualidade do <strong class="text-gray-900">Kit Vital Red Sênior</strong> que você tem <strong>30 Dias de Garantia</strong>. Se em 30 dias você não sentir os resultados e uma melhoria na sua disposição e dores, nós devolvemos 100% do seu dinheiro. Sem perguntas burocráticas.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section class="py-20 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            
+            <h2 class="font-heading font-black text-4xl md:text-5xl text-center text-gray-900 mb-16">
+                Dúvidas <span class="text-brand-main">Frequentes</span>
+            </h2>
+
+            <div class="space-y-4" id="faq-container">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border-2 border-gray-100 rounded-2xl bg-white shadow-sm overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 md:px-8 md:py-8 flex justify-between items-center focus:outline-none bg-gray-50 hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-bold text-2xl text-gray-900 pr-4">Como devo tomar as cápsulas?</span>
+                        <i data-lucide="chevron-down" class="faq-icon text-brand-main w-8 h-8 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6 md:px-8 border-t border-gray-100">
+                        <p class="text-xl text-gray-600 leading-relaxed py-4">A recomendação ideal é: 1 cápsula do frasco "Ossos Fortes" pela manhã após o café; 1 cápsula do frasco "Articulações" após o almoço; e 1 cápsula do "Coração & Memória" após o jantar. Junto com bastante água.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border-2 border-gray-100 rounded-2xl bg-white shadow-sm overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 md:px-8 md:py-8 flex justify-between items-center focus:outline-none bg-gray-50 hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-bold text-2xl text-gray-900 pr-4">Quanto tempo para ver resultados?</span>
+                        <i data-lucide="chevron-down" class="faq-icon text-brand-main w-8 h-8 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6 md:px-8 border-t border-gray-100">
+                        <p class="text-xl text-gray-600 leading-relaxed py-4">Muitos de nossos clientes relatam mais disposição já na primeira semana. Para os efeitos de cartilagem e ossos, o ideal é o uso contínuo por no mínimo 3 meses para os benefícios máximos.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border-2 border-gray-100 rounded-2xl bg-white shadow-sm overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 md:px-8 md:py-8 flex justify-between items-center focus:outline-none bg-gray-50 hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-bold text-2xl text-gray-900 pr-4">O produto tem garantia se eu não gostar?</span>
+                        <i data-lucide="chevron-down" class="faq-icon text-brand-main w-8 h-8 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6 md:px-8 border-t border-gray-100">
+                        <p class="text-xl text-gray-600 leading-relaxed py-4">Sim! Oferecemos 30 dias de garantia incondicional. Se não ficar satisfeito(a), basta entrar em contato com nosso suporte que devolvemos 100% do valor da compra.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border-2 border-gray-100 rounded-2xl bg-white shadow-sm overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 md:px-8 md:py-8 flex justify-between items-center focus:outline-none bg-gray-50 hover:bg-gray-100 transition-colors" onclick="toggleFaq(this)">
+                        <span class="font-bold text-2xl text-gray-900 pr-4">Como funciona a compra e entrega?</span>
+                        <i data-lucide="chevron-down" class="faq-icon text-brand-main w-8 h-8 transition-transform duration-300 flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content bg-white px-6 md:px-8 border-t border-gray-100">
+                        <p class="text-xl text-gray-600 leading-relaxed py-4">A compra é 100% segura blindada contra fraudes. O envio é gratuito para todo o Brasil, com prazo de entrega de 5 a 12 dias úteis via Transportadora ou Correios, dependendo da sua região.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL DE DADOS DE ENVIO (FRETE GRÁTIS) -->
+    <div id="shipping-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl w-full max-w-xl max-h-[90vh] overflow-y-auto shadow-2xl relative animate-fadeIn">
+            <!-- Header Modal -->
+            <div class="bg-brand-main text-white p-6 md:p-8 text-center rounded-t-3xl relative">
+                <button type="button" class="close-modal absolute top-5 right-5 text-white/70 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+                <div class="inline-flex bg-yellow-400 text-yellow-900 font-black px-5 py-2 rounded-full text-sm mb-4 tracking-wider uppercase animate-bounce shadow-md">🎁 Bônus Exclusivo Liberado</div>
+                <h3 class="font-heading font-black text-3xl md:text-4xl mb-2">Aonde devemos enviar?</h3>
+                <p class="text-brand-light text-lg">Preencha com atenção os dados de entrega.</p>
+            </div>
+            
+            <!-- Aviso de Frete -->
+            <div class="bg-yellow-50 border-y-2 border-yellow-200 p-5 text-center shadow-inner">
+                <p class="text-yellow-800 text-lg leading-snug">
+                    O frete para a sua região custaria entre <strong class="line-through text-red-600">R$ 40,00 e R$ 100,00</strong>. Porém, por ser a sua primeira compra, o envio hoje será <strong class="text-green-700 text-2xl font-black bg-green-100 px-3 py-1 rounded inline-block mt-2 border border-green-300">100% GRÁTIS!</strong>
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form id="shipping-form" class="p-6 md:p-8 space-y-6 text-left">
+                <!-- Nome -->
+                <div>
+                    <label class="block font-bold text-gray-700 mb-2 text-xl">Seu Nome Completo</label>
+                    <input type="text" required placeholder="Ex: Maria da Silva" class="w-full border-2 border-gray-300 rounded-2xl px-5 py-4 text-xl focus:border-brand-main focus:ring-4 focus:ring-brand-main/20 outline-none transition-all">
+                </div>
+                
+                <!-- CEP e Estado -->
+                <div class="grid grid-cols-2 gap-5">
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-2 text-xl">Seu CEP</label>
+                        <input type="text" required placeholder="00000-000" maxlength="9" onkeyup="this.value=this.value.replace(/\D/g,'').replace(/^(\d{5})(\d)/,'$1-$2')" class="w-full border-2 border-gray-300 rounded-2xl px-5 py-4 text-xl focus:border-brand-main focus:ring-4 focus:ring-brand-main/20 outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-700 mb-2 text-xl">Estado</label>
+                        <select required class="w-full border-2 border-gray-300 rounded-2xl px-5 py-4 text-xl focus:border-brand-main focus:ring-4 focus:ring-brand-main/20 outline-none transition-all bg-white appearance-none">
+                            <option value="">Selecione...</option>
+                            <option value="SP">SP</option><option value="RJ">RJ</option><option value="MG">MG</option><option value="RS">RS</option><option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Rua e Número -->
+                <div class="grid grid-cols-3 gap-5">
+                    <div class="col-span-2">
+                        <label class="block font-bold text-gray-700 mb-2 text-xl">Rua/Avenida</label>
+                        <input type="text" required placeholder="Ex: Rua das Flores" class="w-full border-2 border-gray-300 rounded-2xl px-5 py-4 text-xl focus:border-brand-main focus:ring-4 focus:ring-brand-main/20 outline-none transition-all">
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block font-bold text-gray-700 mb-2 text-xl">Nº</label>
+                        <input type="text" required placeholder="Nº" class="w-full border-2 border-gray-300 rounded-2xl px-5 py-4 text-xl focus:border-brand-main focus:ring-4 focus:ring-brand-main/20 outline-none transition-all">
+                    </div>
+                </div>
+                
+                <p class="text-base text-gray-500 font-bold text-center flex items-center justify-center gap-2 mt-4 bg-gray-50 p-3 rounded-lg border border-gray-100">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-green-600"></i> Seus dados estão criptografados e seguros.
+                </p>
+
+                <button type="submit" class="cta-button w-full bg-green-600 hover:bg-green-700 text-white font-black text-2xl md:text-3xl py-6 rounded-full shadow-[0_10px_20px_rgba(22,163,74,0.3)] mt-6 flex items-center justify-center gap-3">
+                    Concluir Pedido <i data-lucide="arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <style>
+        .animate-fadeIn {
+            animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        /* Fix for scrollbar changing layout width */
+        .modal-open { overflow: hidden; padding-right: 15px; } 
+    </style>
+
+    <!-- 10. Rodapé -->
+    <footer class="bg-gray-900 text-gray-400 py-12 md:py-16 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-12 text-center md:text-left">
+            
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-2 mb-6">
+                    <i data-lucide="heart-pulse" class="text-brand-main w-8 h-8"></i>
+                    <span class="font-heading font-extrabold text-2xl text-white tracking-tight">Vital Red<span class="text-gray-400"> Sênior</span></span>
+                </div>
+                <p class="text-lg">O suplemento definitivo para quem quer aproveitar a melhor idade com saúde, sem dores e com muita energia.</p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-xl text-white mb-6">Links Úteis</h4>
+                <ul class="space-y-4 text-lg">
+                    <li><a href="#" class="hover:text-white transition-colors">Termos de Uso</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Políticas de Privacidade</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Rastrear Meu Pedido</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-xl text-white mb-6">Atendimento Seguro</h4>
+                <ul class="space-y-4 text-lg">
+                    <li class="flex items-center justify-center md:justify-start gap-3">
+                        <i data-lucide="mail"></i> suporte@vitalred.com
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-3">
+                        <i data-lucide="shield-check" class="text-green-500"></i> Site Blindado e 100% Seguro
+                    </li>
+                    <li class="mt-4 filter grayscale opacity-50 flex justify-center md:justify-start">
+                        <img src="https://certificadosbcdn.ssl.fastly.net/v1/assets/img/selo_ssl_v3.png" alt="SSL" class="h-12 bg-white rounded-lg p-1">
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-center text-base">
+            <p>&copy; 2026 Vital Red. Todos os direitos reservados. Este site não é afiliado ao Facebook ou Google.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts da Página -->
+    <script>
+        // Inicializa Lucide Icons
+        lucide.createIcons();
+
+        // FAQ Toggle
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const content = item.querySelector('.faq-content');
+            
+            // Fecha todos
+            document.querySelectorAll('.faq-item').forEach(el => {
+                if(el !== item) {
+                    el.classList.remove('active');
+                }
+            });
+
+            // Abre o atual
+            item.classList.toggle('active');
+        }
+
+        // Script Global para as Regras do Sistema solicitadas no prompt
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intercepta cliques de links vazios ou que levariam para fora da pag
+            document.querySelectorAll('a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    // Se tentar navegar para outra pagina (nao eh ancora e nao eh # e nao é link do checkout validado da sillientpay)
+                    if (href && href !== '#' && !href.startsWith('#') && !href.includes('pay.sillientpay.com')) {
+                        e.preventDefault();
+                        const lock = document.getElementById('system-lock');
+                        if(lock) {
+                            lock.classList.remove('hidden');
+                            lock.classList.add('flex');
+                        }
+                    }
+                });
+            });
+
+            // Para garantir ancora suave se for compativel
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Lógica do Timer de Urgência
+            let time = 15 * 60; // 15 minutos em segundos
+            const minutesEl = document.getElementById('countdown-minutes');
+            const secondsEl = document.getElementById('countdown-seconds');
+            
+            if(minutesEl && secondsEl) {
+                const timerInterval = setInterval(() => {
+                    const minutes = Math.floor(time / 60);
+                    let seconds = time % 60;
+                    
+                    seconds = seconds < 10 ? '0' + seconds : seconds;
+                    let displayMinutes = minutes < 10 ? '0' + minutes : minutes;
+                    
+                    minutesEl.textContent = displayMinutes;
+                    secondsEl.textContent = seconds;
+                    
+                    if (time > 0) {
+                        time--;
+                    } else {
+                        clearInterval(timerInterval);
+                        // Opcional: Ação ao final do timer
+                    }
+                }, 1000);
+            }
+
+            // Lógica do Modal de Frete Fake (Piscologia de Vendas)
+            const shippingModal = document.getElementById('shipping-modal');
+            const btnOpenModal = document.getElementById('open-shipping-modal');
+            const btnsCloseModal = document.querySelectorAll('.close-modal');
+            const shippingForm = document.getElementById('shipping-form');
+
+            if(btnOpenModal) {
+                btnOpenModal.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    shippingModal.classList.remove('hidden');
+                    shippingModal.classList.add('flex');
+                    document.body.classList.add('modal-open');
+                });
+            }
+
+            btnsCloseModal.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    shippingModal.classList.add('hidden');
+                    shippingModal.classList.remove('flex');
+                    document.body.classList.remove('modal-open');
+                });
+            });
+
+            shippingModal.addEventListener('click', (e) => {
+                if(e.target === shippingModal) {
+                    shippingModal.classList.add('hidden');
+                    shippingModal.classList.remove('flex');
+                    document.body.classList.remove('modal-open');
+                }
+            });
+
+            if(shippingForm) {
+                shippingForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const btnSubmit = shippingForm.querySelector('button[type="submit"]');
+                    btnSubmit.innerHTML = '<i data-lucide="loader-2" class="animate-spin"></i> Processando...';
+                    btnSubmit.classList.add('opacity-90', 'cursor-not-allowed', 'bg-green-700');
+                    lucide.createIcons(); // renderiza o icone de spin
+                    
+                    // NENHUM DADO É SALVO AQUI.
+                    // Apenas redirecionamos pro checkout em 1 segundo.
+                    setTimeout(() => {
+                        window.location.href = 'https://pay.sillientpay.com/zcLBID5x';
+                    }, 1200);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
